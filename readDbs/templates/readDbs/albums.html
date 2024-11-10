@@ -1,0 +1,26 @@
+{% extends "readDbs/base.html" %}
+
+{% block title %}
+    All Albums in Chinook database
+{% endblock %}
+
+{% block content %}
+    <h3>All Albums in Chinook database</h3>
+    <br>
+    <a href="{% url 'index' %}">Go To Main Page</a>
+    <br>
+    <br>
+
+    <p>Total number of albums: {{ num_albums }}</p>
+
+    <ul>
+        {% for album in albums %}
+
+            <li> {{ album.title }} </li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+
+{% endblock %}

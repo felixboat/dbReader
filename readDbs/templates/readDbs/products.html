@@ -1,0 +1,24 @@
+{% extends "readDbs/base.html" %}
+
+{% block title %}
+    All Products in Northwind database
+{% endblock %}
+
+{% block content %}
+    <h3>All Products in Northwind database</h3>
+    <br>
+    <a href="{% url 'index' %}">Go To Main Page</a>
+    <br>
+    <br>
+    <p>Total number of products: {{ num_prod }}</p>
+    <ul>
+        {% for prod in products %}
+
+            <li> {{ prod.productname }} </li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+
+{% endblock %}

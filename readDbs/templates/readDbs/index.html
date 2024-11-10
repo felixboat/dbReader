@@ -1,0 +1,15 @@
+{% extends 'readDbs/base.html' %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+    <h2>Welcome to My Main Page</h2>
+    <p>This is the main page of my website.</p>
+    <nav>
+        <ul>
+            <li><a href="{% url 'book_list_url' %}">LIST OF BOOKS</a></li>
+            <li><a href="{% url 'product_list_url' %}">LIST OF NORTHWIND PRODUCTS</a></li>
+            <li><a href="{% url 'album_list_url' %}">LIST OF CHINOOK ALBUMS</a></li>
+        </ul>
+    </nav>
+{% endblock %}

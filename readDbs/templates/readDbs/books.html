@@ -1,0 +1,30 @@
+{% extends "readDbs/base.html" %}
+
+{% block title %}
+    All Books
+{% endblock %}
+
+{% block content %}
+    <h3>All Books in my Default database</h3>
+    <br>
+    <a href="{% url 'index' %}">Go To Main Page</a>
+    <br>
+    <br>
+
+    <p>Total number of books: {{ num_books }}</p>
+    <p>Average rating: {{ agg_rating.rating__avg }}</p>
+    <p>Minimum rating: {{ agg_rating.rating__min }}</p>
+    <p>Maximum rating: {{ agg_rating.rating__max }}</p>
+
+    <ul>
+        {% for book in books %}
+
+            <li> {{ book.title }} (Rating: {{ book.rating }})</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+
+
+{% endblock %}
