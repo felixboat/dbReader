@@ -69,65 +69,7 @@ class Book(models.Model):
     def __str__(self):
         return f"{self.title} ({self.rating})"
 
-# # MODELS CHINOOK AND NORTHWIND WITH ADJUSTMENTS
-# class ChinookAlbum(models.Model):
-#     albumid = models.IntegerField(primary_key=True)
-#     title = models.CharField(max_length=160)
-#     artistid = models.IntegerField()
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'Album'
-#         # app_label = 'chinook_app'  # Needed for the db router
-#
-# class NorthwindProducts(models.Model):
-#     productid = models.IntegerField(db_column='ProductID', primary_key=True)
-#     productname = models.TextField(db_column='ProductName')
-#     supplierid = models.ForeignKey('Suppliers', models.DO_NOTHING, db_column='SupplierID', blank=True, null=True)
-#     categoryid = models.ForeignKey('Categories', models.DO_NOTHING, db_column='CategoryID', blank=True, null=True)
-#     quantityperunit = models.TextField(db_column='QuantityPerUnit', blank=True, null=True)
-#     unitprice = models.DecimalField(db_column='UnitPrice', max_digits=10, decimal_places=2)
-#     unitsinstock = models.IntegerField(db_column='UnitsInStock', blank=True, null=True)
-#     unitsonorder = models.IntegerField(db_column='UnitsOnOrder', blank=True, null=True)
-#     reorderlevel = models.IntegerField(db_column='ReorderLevel', blank=True, null=True)
-#     discontinued = models.TextField(db_column='Discontinued')
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'Products'
-#         # app_label = 'northwind_app'  # Needed for the db router
-#
-# class Suppliers(models.Model):
-#     supplierid = models.IntegerField(db_column='SupplierID', primary_key=True)
-#     companyname = models.TextField(db_column='CompanyName')
-#     contactname = models.TextField(db_column='ContactName')
-#     contacttitle = models.TextField(db_column='ContactTitle')
-#     address = models.TextField(db_column='Address')
-#     city = models.TextField(db_column='City')
-#     region = models.TextField(db_column='Region')
-#     postalcode = models.TextField(db_column='PostalCode')
-#     country = models.TextField(db_column='Country')
-#     phone = models.TextField(db_column='Phone')
-#     fax = models.TextField(db_column='Fax')
-#     homepage = models.TextField(db_column='HomePage')
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'Suppliers'
-#
-# class Categories(models.Model):
-#     categoryid = models.IntegerField(db_column='CategoryID', primary_key=True)
-#     categoryname = models.TextField(db_column='CategoryName')
-#     description = models.TextField(db_column='Description')
-#     picture = models.BinaryField(db_column='Picture')
-#
-#     class Meta:
-#         managed = False
-#         db_table = 'Categories'
-
-
-# MODELS CHINOOK AND NORTHWIND WITH COPY-PASTE
-
+# MODELS CHINOOK AND NORTHWIND WITH COPY-PASTE, CORRECTION OF ERRORS, RENAME THE TABLES FOR DB IDENTIFICATION IN CASE OF IDENTICAL NAMES
 class ChinookAlbum(models.Model):
     albumid = models.AutoField(db_column='AlbumId', primary_key=True)  # Field name made lowercase.
     title = models.TextField(db_column='Title')  # Field name made lowercase. This field type is a guess.
